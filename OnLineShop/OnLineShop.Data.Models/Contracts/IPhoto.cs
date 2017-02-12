@@ -12,6 +12,6 @@ namespace OnLineShop.Data.Models.Contracts
 
         string MimeType { get; set; }
 
-        Guid ProductId { get; set; }
+        int ProductId { get; set; }
     }
 }

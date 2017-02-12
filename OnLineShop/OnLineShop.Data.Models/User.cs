@@ -1,34 +1,73 @@
-﻿using System.Security.Claims;
+﻿using System.Collections.Generic;
+
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.ComponentModel.DataAnnotations.Schema;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OnLineShop.Data.Models
 {
     public class User : IdentityUser
     {
-        [MinLength(Utils.Constants.NameMinLength)]
-        [MaxLength(Utils.Constants.NameMaxLength)]
-        [RegularExpression(Utils.Constants.EnBgSpaceMinus)]
-        public string FirstName { get; set; }
+        private ICollection<Order> orders;
+        private ICollection<Product> favorites;
+        private ICollection<ContactInfo> contactInfos;
 
-        [MinLength(Utils.Constants.NameMinLength)]
-        [MaxLength(Utils.Constants.NameMaxLength)]
-        [RegularExpression(Utils.Constants.EnBgSpaceMinus)]
-        public string LastName { get; set; }
+        public User()
+        {
+            this.orders = new HashSet<Order>();
+            this.favorites = new HashSet<Product>();
+            this.contactInfos = new HashSet<ContactInfo>();
+        }
 
-        public DeliveryAddress Address { get; set; }
+       // [ForeignKey("ContactInfo")]
+      //  public int ContactInfoId { get; set; }
 
+  
         public bool IsDeleted { get; set; }
 
-        [ForeignKey("Order")]
-        public Guid OrderId { get; set; }
+        public virtual ICollection<Order> Orders
+        {
+            get
+            {
+                return this.orders;
+            }
 
-        public virtual Order order { get; set; }
+            set
+            {
+                this.orders = value;
+            }
+        }
+
+        public virtual ICollection<Product> Favorites
+        {
+            get
+            {
+                return this.favorites;
+            }
+
+            set
+            {
+                this.favorites = value;
+            }
+        }
+
+        public virtual ICollection<ContactInfo> ContactInfo
+        {
+            get
+            {
+                return this.contactInfos;
+            }
+
+            set
+            {
+                this.contactInfos = value;
+            }
+        }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {

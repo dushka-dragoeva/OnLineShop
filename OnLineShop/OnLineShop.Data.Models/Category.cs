@@ -8,19 +8,19 @@ using OnLineShop.Data.Models.Utils;
 
 namespace OnLineShop.Data.Models
 {
-    public class Category: ICategory, IDbModel, INamable, IContainProducts
+    public class Category: IDbModel, INamable
     {
-        private ICollection<IProduct> products;
-        private ICollection<ICategory> subCategories;
+        private ICollection<Product> products;
+        private ICollection<Category> subCategories;
 
         public Category()
         {
-            this.Products = new HashSet<IProduct>();
-            this.SubCategories = new HashSet<ICategory>();
+            this.Products = new HashSet<Product>();
+            this.SubCategories = new HashSet<Category>();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public bool IsDeleted { get; set; }
       
@@ -31,7 +31,7 @@ namespace OnLineShop.Data.Models
         [RegularExpression(Constants.EnBgDigitSpaceMinus)]
         public string Name { get; set; }
 
-        public virtual ICollection<IProduct> Products
+        public virtual ICollection<Product> Products
         {
             get
             {
@@ -44,7 +44,7 @@ namespace OnLineShop.Data.Models
             }
         }
 
-        public virtual ICollection<ICategory> SubCategories
+        public virtual ICollection<Category> SubCategories
         {
             get
             {

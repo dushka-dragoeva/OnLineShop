@@ -17,7 +17,7 @@ namespace OnLineShop.Data
 
         IDbSet<Brand> Brands { get; set; }
 
-        IDbSet<DeliveryAddress> DeliveryAddress { get; set; }
+        IDbSet<Address> DeliveryAddress { get; set; }
 
         IDbSet<Photo> Photos { get; set; }  // Could be only string
 

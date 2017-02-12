@@ -8,17 +8,17 @@ using OnLineShop.Data.Models.Contracts;
 
 namespace OnLineShop.Data.Models
 {
-    public class Brand : IBrand, IDbModel, INamable
+    public class Brand : IDbModel, INamable
     {
-        private ICollection<IProduct> products;
+        private ICollection<Product> products;
 
         public Brand()
         {
-            this.Products = new HashSet<IProduct>();
+            this.Products = new HashSet<Product>();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Index(IsUnique = true)]
@@ -33,7 +33,7 @@ namespace OnLineShop.Data.Models
         [RegularExpression(Constants.DescriptionRegex)]
         public string Description { get; set; }
 
-        public virtual ICollection<IProduct> Products
+        public virtual ICollection<Product> Products
         {
             get
             {

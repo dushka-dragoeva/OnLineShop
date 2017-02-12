@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnLineShop.Data.Models.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnLineShop.Data.Models
 {
-    public class Order
+    public class Order:IDbModel
     {
         private ICollection<OrderDetail> orderDetails;
 
@@ -18,12 +19,12 @@ namespace OnLineShop.Data.Models
             this.orderDetails = new HashSet<OrderDetail>();
         }
 
-        public Guid OrderId { get; set; }
+        public int Id { get; set; }
 
         public DateTime OrderDate { get; set; }
 
-        [ForeignKey("Category")]
-        public Guid UsernameId { get; set; }
+        [ForeignKey("User")]
+        public string UserId { get; set; }
 
         public virtual User User { get; set; }
 
@@ -39,7 +40,7 @@ namespace OnLineShop.Data.Models
         [ScaffoldColumn(false)]
         public bool HasBeenClosed { get; set; }
 
-        public ICollection<OrderDetail> OrderDetails
+        public virtual ICollection<OrderDetail> OrderDetails
         {
             get
             {
@@ -50,5 +51,7 @@ namespace OnLineShop.Data.Models
                 this.orderDetails = value;
             }
         }
+
+        public bool IsDeleted { get; set; }
     }
 }

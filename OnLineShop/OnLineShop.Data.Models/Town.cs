@@ -5,9 +5,9 @@ using OnLineShop.Data.Models.Contracts;
 
 namespace OnLineShop.Data.Models
 {
-    public class Town : IDbModel, INamable
+    public class Town :IDbModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         
         public bool IsDeleted { get; set; }
 

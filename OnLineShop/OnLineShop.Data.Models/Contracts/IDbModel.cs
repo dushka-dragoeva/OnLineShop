@@ -4,7 +4,7 @@ namespace OnLineShop.Data.Models.Contracts
 {
     public interface IDbModel
     {
-         Guid Id { get; }
+         int Id { get; }
 
         bool IsDeleted { get; set; }
     }

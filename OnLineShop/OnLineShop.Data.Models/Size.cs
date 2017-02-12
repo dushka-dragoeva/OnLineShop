@@ -8,7 +8,7 @@ using OnLineShop.Data.Models.Utils;
 
 namespace OnLineShop.Data.Models
 {
-    public class Size: ISize , IDbModel,  IContainProducts
+    public class Size: ISize , IDbModel
     {
         private ICollection<Product> products;
 
@@ -18,12 +18,12 @@ namespace OnLineShop.Data.Models
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Index(IsUnique = true)]
         [MinLength(Constants.NameMinLength)]
-        [MaxLength(Constants.NameMaxValue)]
+        [MaxLength(Constants.NameMaxLength)]
         [RegularExpression(Constants.EnBgDigitSpaceMinus)]
         public string Value { get; set; }
 

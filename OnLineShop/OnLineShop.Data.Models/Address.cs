@@ -1,17 +1,23 @@
-﻿using OnLineShop.Data.Models.Contracts;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using OnLineShop.Data.Models.Contracts;
 namespace OnLineShop.Data.Models
 {
-    public class DeliveryAddress : IDbModel
+    public class Address : IDbModel
 
     {
         public const int StreetMinLength = 2;
         public const int StreetMaxLength = 100;
+        public ICollection<ContactInfo> contactInfo;
 
-        public Guid Id { get; set; }
+        public Address()
+        {
+            this.contactInfo = new HashSet<ContactInfo>();
+        }
+
+        public int Id { get; set; }
 
         [Required]
         [MinLength(StreetMinLength)]
@@ -19,12 +25,15 @@ namespace OnLineShop.Data.Models
         [RegularExpression(Utils.Constants.EnBgSpaceMinus)]
         public string AddressLine { get; set; }
 
+        public string PostCode { get; set; }
+
         [ForeignKey("Town")]
-        public Guid TownId { get; set; }
+        public int TownId { get; set; }
 
         public virtual Town Town { get; set; }
 
-        public bool IsDeleted { get; set; }
+        //public virtual ContactInfo ContactInfo { get; set; }
 
+        public bool IsDeleted { get; set; }
     }
 }

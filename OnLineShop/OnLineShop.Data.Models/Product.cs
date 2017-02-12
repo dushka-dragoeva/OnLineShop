@@ -8,21 +8,25 @@ using OnLineShop.Data.Models.Contracts;
 
 namespace OnLineShop.Data.Models
 {
-    public class Product : IProduct, IDbModel, INamable, IDescribable
+    public class Product : IDbModel, INamable, IDescribable
     {
         public const int NumberOfPictures = 3;
-                     
-        private ICollection<ISize> sizes;
-        private ICollection<IPhoto> photos;
+
+        private ICollection<Size> sizes;
+        private ICollection<Photo> photos;
+        private ICollection<Like> likes;
+        private ICollection<User> users;
 
         public Product()
         {
-            this.Sizes = new HashSet<ISize>();
-            this.Photos = new HashSet<IPhoto>();
+            this.sizes = new HashSet<Size>();
+            this.photos = new HashSet<Photo>();
+            this.likes = new HashSet<Like>();
+            this.users = new HashSet<User>();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Index(IsUnique = true)]
@@ -44,7 +48,7 @@ namespace OnLineShop.Data.Models
         public string ModelNumber { get; set; }
 
         [Required]
-        [Range(int.MinValue,int.MaxValue)]
+        [Range(int.MinValue, int.MaxValue)]
         public int Quantity { get; set; }
 
         [ForeignKey("Category")]
@@ -57,6 +61,8 @@ namespace OnLineShop.Data.Models
 
         public virtual Brand Brand { get; set; }
 
+      //  public virtual CartItem CartItem { get; set; }
+
         [Required]
         [Range(int.MinValue, int.MaxValue)]
         public decimal price { get; set; }
@@ -66,7 +72,7 @@ namespace OnLineShop.Data.Models
         [Range(int.MinValue, int.MaxValue)]
         public decimal promoPrice { get; set; }
 
-        public ICollection<IPhoto> Photos
+        public virtual ICollection<Photo> Photos
         {
             get
             {
@@ -79,7 +85,7 @@ namespace OnLineShop.Data.Models
             }
         }
 
-        public virtual ICollection<ISize> Sizes
+        public virtual ICollection<Size> Sizes
         {
             get
             {
@@ -89,6 +95,32 @@ namespace OnLineShop.Data.Models
             set
             {
                 this.sizes = value;
+            }
+        }
+
+        public virtual ICollection<Like> Likes
+        {
+            get
+            {
+                return this.likes;
+            }
+
+            set
+            {
+                this.likes = value;
+            }
+        }
+
+        public virtual ICollection<User> Users
+        {
+            get
+            {
+                return this.users;
+            }
+
+            set
+            {
+                this.users = value;
             }
         }
 

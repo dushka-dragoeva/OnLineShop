@@ -4,6 +4,7 @@ using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 using OnLineShop.Data.Models;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace OnLineShop.Data
 {
@@ -13,11 +14,17 @@ namespace OnLineShop.Data
         public OnLineShopDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+
+        }
+
+        public static OnLineShopDbContext Create()
+        {
+            return new OnLineShopDbContext();
         }
 
         public IDbSet<Brand> Brands { get; set; }
 
-        public IDbSet<DeliveryAddress> DeliveryAddress { get; set; }
+        public IDbSet<Address> DeliveryAddress { get; set; }
 
         public IDbSet<Photo> Photos { get; set; }  // Could be only string
 
@@ -33,11 +40,16 @@ namespace OnLineShop.Data
 
         public IDbSet<OrderDetail> OrderDetail { get; set; }
 
-        public IDbSet<Order> Order{ get; set; }
+        public IDbSet<Order> Order { get; set; }
 
-        public static OnLineShopDbContext Create()
+        public IDbSet<ContactInfo> ContactInfo { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            return new OnLineShopDbContext();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

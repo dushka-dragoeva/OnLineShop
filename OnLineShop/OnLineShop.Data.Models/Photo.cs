@@ -6,13 +6,13 @@ using OnLineShop.Data.Models.Contracts;
 
 namespace OnLineShop.Data.Models
 {
-    public class Photo : IPhoto, IDbModel
+    public class Photo : IDbModel
 
     {
         public const int UrlLengthMinLength = 6;
         public const int UrlLengthMaxValue = 300;
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         //  [Required]
         public string PictureBase64 { get; set; }
@@ -26,9 +26,9 @@ namespace OnLineShop.Data.Models
         public string MimeType { get; set; }
 
         [ForeignKey("Product")]
-        public Guid ProductId { get; set; }
+        public int ProductId { get; set; }
 
-        public virtual IProduct Product { get; set; }
+        public virtual Product Product { get; set; }
 
         public bool IsDeleted { get; set; }
     }
