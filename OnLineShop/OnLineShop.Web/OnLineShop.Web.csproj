@@ -203,7 +203,6 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\AdminHome.aspx" />
-    <Content Include="Admin\CategoriesControl.ascx" />
     <Content Include="Admin\CategoriesView.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -374,13 +373,6 @@
     </Compile>
     <Compile Include="Admin\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\CategoriesControl.ascx.cs">
-      <DependentUpon>CategoriesControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\CategoriesControl.ascx.designer.cs">
-      <DependentUpon>CategoriesControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Admin\CategoriesView.aspx.cs">
       <DependentUpon>CategoriesView.aspx</DependentUpon>

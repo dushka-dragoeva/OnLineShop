@@ -20,11 +20,14 @@ namespace OnLineShop.Web.Admin
         public ICategoryService CategoryService { get; set; }
 
         public event EventHandler OnCategoriesGetData;
+        public event EventHandler OnCategoriesEditData;
+        public event EventHandler OnCategoriesDeliteData;
+        public event EventHandler OnCategoriesGetById;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            
+
             {
                 ViewState["PreviousPage"] = Request.UrlReferrer;
             }
@@ -46,24 +49,19 @@ namespace OnLineShop.Web.Admin
         // The id parameter name should match the DataKeyNames value set on the control
         public void GridViewCategories_DeleteItem(int? id)
         {
-
-            this.CategoryService.Delete(id);
-
+            this.OnCategoriesDeliteData?.Invoke(this, null);
         }
 
         protected void ButtonCreate_Click(object sender, EventArgs e)
         {
             string name = this.CategoryCreate.Text;
             this.CategoryService.Create(name);
-            this.Response.Redirect("~/Admin/Categories.View.aspx");
+            this.Response.Redirect("~/Admin/CategoriesView.aspx");
         }
 
         protected void ButtonCancel_Click(object sender, EventArgs e)
         {
-            // this.CreareItem.Visible = false;
-            // this.ButtonAdd.Visible = true;
-            // this.RequiredfieldValidator.IsValid = true;
-            this.Response.Redirect("~/Admin/Categories.View.aspx");
+            this.Response.Redirect("~/Admin/CategoriesView.aspx");
         }
 
         protected void GridViewCategories_SelectedIndexChanged(object sender, EventArgs e)

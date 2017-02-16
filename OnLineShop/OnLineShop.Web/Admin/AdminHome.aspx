@@ -27,6 +27,6 @@
         <li><a runat="server" href="~/Admin/SizesView">Размери</a></li>
     </ul>
 
-  <uc:AdminCategories runat="server" ID="EditCategories" />
+ <%-- <uc:AdminCategories runat="server" ID="EditCategories" />--%>
 
 </asp:Content>
