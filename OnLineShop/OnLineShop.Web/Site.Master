@@ -55,12 +55,6 @@
                         <li><a runat="server" href="~/Contact">Доставка</a></li>
                         <li><a runat="server" href="~/Contact">Новини</a></li>
                         <li><a runat="server" href="~/Contact">Контакти</a></li>
-
-                        <li><a runat="server" href="~/Admin/Product">Продукти</a></li>
-                        <li><a runat="server" href="~/Admin/Categories">Катргории</a></li>
-                        <li><a runat="server" href="~/Admin/Brands">Марки</a></li>
-                        <li><a runat="server" href="~/Admin/Size"></a>Размери</li>
-                        <li><a runat="server" href="~/Admin/User"></a>Клиенти</li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -80,7 +74,11 @@
                     </asp:LoginView>
                 </div>
             </div>
+               <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
+                 
+            </asp:ContentPlaceHolder>
         </div>
+
         <div class="container body-content">
           
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -10,7 +10,7 @@
 namespace OnLineShop.Web.Admin {
     
     
-    public partial class Categories {
+    public partial class CategoriesView {
         
         /// <summary>
         /// GridViewCategories control.

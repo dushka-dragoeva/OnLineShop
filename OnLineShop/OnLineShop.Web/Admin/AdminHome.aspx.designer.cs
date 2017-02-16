@@ -10,6 +10,15 @@
 namespace OnLineShop.Web.Admin {
     
     
-    public partial class Product {
+    public partial class AdminHome {
+        
+        /// <summary>
+        /// EditCategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::OnLineShop.Web.Admin.CategoriesControl EditCategories;
     }
 }

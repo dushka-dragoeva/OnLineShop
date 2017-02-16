@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Categories.aspx.cs" Inherits="OnLineShop.Web.Admin.Categories" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoriesView.aspx.cs" Inherits="OnLineShop.Web.Admin.CategoriesView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h2>Категории</h2>
+    <a href="AdminHome.aspx">BackToAdmin</a>
 
     <asp:GridView
         ID="GridViewCategories"
@@ -26,7 +27,7 @@
         <AlternatingRowStyle BackColor="#DCDCDC" />
 
         <Columns>
-            <asp:CommandField ShowSelectButton="true" />
+            <asp:CommandField ShowSelectButton="true" ControlStyle-CssClass="glyphicon glyphicon-ok" ItemStyle-ForeColor="Green" SelectText="" />
             <asp:BoundField DataField="Id" Visible="false" />
 
             <asp:TemplateField HeaderText="Name" SortExpression="Name">
@@ -53,20 +54,21 @@
                 </EditItemTemplate>
             </asp:TemplateField>
 
-            <asp:CommandField ShowEditButton="true">
+            <asp:CommandField ShowEditButton="true" SelectText="" ControlStyle-CssClass="glyphicon glyphicon-pencil" EditText="">
                 <ControlStyle></ControlStyle>
             </asp:CommandField>
-            <asp:CommandField ShowDeleteButton="true">
-                <ControlStyle></ControlStyle>
-            </asp:CommandField>
+            <asp:CommandField ShowDeleteButton="true"
+                ControlStyle-CssClass="glyphicon glyphicon-remove"
+                DeleteText="" ItemStyle-ForeColor="Red"
+                ItemStyle-Font-Bold="true"></asp:CommandField>
 
         </Columns>
 
         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-        <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="purple" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-        <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+        <SelectedRowStyle BackColor="#9999FF" Font-Bold="True" ForeColor="White" />
         <SortedAscendingCellStyle BackColor="#F1F1F1" />
         <SortedAscendingHeaderStyle BackColor="#0000A9" />
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
@@ -93,16 +95,24 @@
                 </asp:RequiredFieldValidator>
                 <br />
                 <br />
-                <asp:Button ID="ButtonCreate" runat="server" Text="Потвърди" CssClass="btn btn-info" OnClick="ButtonCreate_Click" />
+                <asp:Button ID="ButtonCreate" 
+                    runat="server" 
+                    Text="Запис" 
+                    OnClick="ButtonCreate_Click"
+                     BackColor="LightGray"
+                     Font-Bold="true"/>
+
+                &nbsp;
 
                 <asp:Button ID="ButtonCancel"
                     runat="server"
                     CommandName="Cancel"
-                    EnableClientScript="false"
-                    Text="Откажи"
-                    CssClass="btn btn-danger"
-                    CausesValidation="false" ValidateRequestMode="Disabled"
-                    OnClick="ButtonCancel_Click" />
+                    Font-Bold="true"
+                    Text="Отказ"
+                    CausesValidation="false" 
+                    ValidateRequestMode="Disabled"
+                    OnClick="ButtonCancel_Click"
+                    BackColor="Red" />
 
             </asp:Panel>
 

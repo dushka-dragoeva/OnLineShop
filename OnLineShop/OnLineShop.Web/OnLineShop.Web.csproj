@@ -111,6 +111,10 @@
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -198,12 +202,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Admin\Brands.aspx" />
-    <Content Include="Admin\Categories.aspx" />
-    <Content Include="Admin\Product.aspx" />
-    <Content Include="Admin\ProductDetails.aspx" />
-    <Content Include="Admin\Sizes.aspx" />
-    <Content Include="Admin\User.aspx" />
+    <Content Include="Admin\AdminHome.aspx" />
+    <Content Include="Admin\CategoriesControl.ascx" />
+    <Content Include="Admin\CategoriesView.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -367,47 +368,26 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Brands.aspx.cs">
-      <DependentUpon>Brands.aspx</DependentUpon>
+    <Compile Include="Admin\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Brands.aspx.designer.cs">
-      <DependentUpon>Brands.aspx</DependentUpon>
+    <Compile Include="Admin\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Categories.aspx.cs">
-      <DependentUpon>Categories.aspx</DependentUpon>
+    <Compile Include="Admin\CategoriesControl.ascx.cs">
+      <DependentUpon>CategoriesControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Categories.aspx.designer.cs">
-      <DependentUpon>Categories.aspx</DependentUpon>
+    <Compile Include="Admin\CategoriesControl.ascx.designer.cs">
+      <DependentUpon>CategoriesControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Product.aspx.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
+    <Compile Include="Admin\CategoriesView.aspx.cs">
+      <DependentUpon>CategoriesView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Product.aspx.designer.cs">
-      <DependentUpon>Product.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ProductDetails.aspx.cs">
-      <DependentUpon>ProductDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ProductDetails.aspx.designer.cs">
-      <DependentUpon>ProductDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Sizes.aspx.cs">
-      <DependentUpon>Sizes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Sizes.aspx.designer.cs">
-      <DependentUpon>Sizes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\User.aspx.cs">
-      <DependentUpon>User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\User.aspx.designer.cs">
-      <DependentUpon>User.aspx</DependentUpon>
+    <Compile Include="Admin\CategoriesView.aspx.designer.cs">
+      <DependentUpon>CategoriesView.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -441,6 +421,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="NinjectBindingsModules\MvpNinjectModule.cs" />
+    <Compile Include="PresenterFactories\ICustomPresenterFactory.cs" />
+    <Compile Include="PresenterFactories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -480,6 +463,10 @@
     <ProjectReference Include="..\OnLineShop.Data\OnLineShop.Data.csproj">
       <Project>{23C3BD06-F39E-409B-9F23-C8B3BDC0957E}</Project>
       <Name>OnLineShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnLineShop.MVP\OnLineShop.MVP.csproj">
+      <Project>{53BB6785-696A-4FCB-87D4-A701489208FE}</Project>
+      <Name>OnLineShop.MVP</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

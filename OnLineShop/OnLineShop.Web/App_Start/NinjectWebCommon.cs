@@ -12,6 +12,8 @@ namespace OnLineShop.Web.App_Start
     using Ninject.Extensions.Conventions;
     using Ninject.Web.Common;
     using Data;
+    using NinjectBindingsModules;
+    using WebFormsMvp.Binder;
 
     public static class NinjectWebCommon 
     {
@@ -63,8 +65,11 @@ namespace OnLineShop.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Load(new MvpNinjectModule());
+
+            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
+
             kernel.Bind<IOnLineShopDbContext>().To<OnLineShopDbContext>().InSingletonScope();
-       
 
             kernel.Bind(x =>
             x.From("OnLineShop.Data.Services")

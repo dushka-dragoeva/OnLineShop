@@ -54,6 +54,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories\CategoriesPresenter.cs" />
+    <Compile Include="Categories\CategoriesViewModel.cs" />
+    <Compile Include="Categories\ICategoriesView.cs" />
     <Compile Include="Factories\ICustomPresenterFactory.cs" />
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="Models\ShoppingCartActions.cs" />
