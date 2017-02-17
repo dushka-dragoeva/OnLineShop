@@ -1,29 +1,21 @@
 ﻿using OnLineShop.Data.Models;
-using OnLineShop.Data.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnLineShop.Data.Services
 {
-  public  class CategoryService: ICategoryService
+    public class CategoryService : ICategoryService
     {
         private readonly IOnLineShopDbContext Context;
 
-        public CategoryService(IOnLineShopDbContext context) 
+        public CategoryService(IOnLineShopDbContext context)
         {
             this.Context = context;
         }
 
-        public Category Create(string name)
+        public int Insert(Category category)
         {
-            var category = new Category() { Name = name };
-
             this.Context.Categories.Add(category);
-            this.Context.SaveChanges();
-            return category;
+            return this.Context.SaveChanges();
         }
 
         public void Delete(int? id)
@@ -35,7 +27,7 @@ namespace OnLineShop.Data.Services
 
         public IQueryable<Category> GetAll()
         {
-            return this.Context.Categories.Where(c=>c.IsDeleted==false);
+            return this.Context.Categories.Where(c => c.IsDeleted == false);
         }
 
         public Category GetById(int? id)
@@ -48,11 +40,12 @@ namespace OnLineShop.Data.Services
             return this.Context.Categories.Find(name);
         }
 
-        public void UpdateName(int? id, string newName)
+        public void Update(Category category)
         {
 
-            Category categoryToUpdate = this.Context.Categories.Find(id);
-            categoryToUpdate.Name = newName;
+            Category categoryToUpdate = this.Context.Categories.Find(category.Id);
+            this.Context.Entry(categoryToUpdate).CurrentValues.SetValues(category);
+
             this.Context.SaveChanges();
         }
     }

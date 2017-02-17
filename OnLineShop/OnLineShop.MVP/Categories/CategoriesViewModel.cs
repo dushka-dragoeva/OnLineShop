@@ -13,5 +13,7 @@ namespace OnLineShop.MVP.Categories
         public IQueryable<Category> Categories { get; set; }
 
         public Category Category { get; set; }
+
+        
     }
 }

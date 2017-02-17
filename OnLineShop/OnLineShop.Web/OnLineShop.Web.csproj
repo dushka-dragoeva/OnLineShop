@@ -442,6 +442,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnLineShop.Data.Models\OnLineShop.Data.Models.csproj">

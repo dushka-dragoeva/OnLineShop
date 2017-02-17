@@ -15,10 +15,10 @@ namespace OnLineShop.Data.Services
 
         Category GetByName(string name);
 
-        void UpdateName(int? id, string name);
+        void Update(Category category);
 
         void Delete(int? id);
 
-        Category Create(string name);
+        int Insert(Category category);
     }
 }

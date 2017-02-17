@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Linq;
-using System.Web.UI.WebControls;
-
-using Ninject;
 
 using WebFormsMvp.Web;
 
 using OnLineShop.Data.Models;
-using OnLineShop.Data.Services;
 using OnLineShop.MVP.Categories;
 using WebFormsMvp;
 
@@ -16,63 +12,31 @@ namespace OnLineShop.Web.Admin
     [PresenterBinding(typeof(CategoriesPresenter))]
     public partial class CategoriesView : MvpPage<CategoriesViewModel>, ICategoriesView
     {
-        [Inject]
-        public ICategoryService CategoryService { get; set; }
-
         public event EventHandler OnCategoriesGetData;
-        public event EventHandler OnCategoriesEditData;
-        public event EventHandler OnCategoriesDeliteData;
-        public event EventHandler OnCategoriesGetById;
+        public event EventHandler<CategoryEventArgs> OnCategoryEdit;
+        public event EventHandler<CategoryEventArgs> OnCategoryDelite;
+        public event EventHandler OnCategoryCreate;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
+         public CategoryEventArgs categoryEventArgs;
 
-            {
-                ViewState["PreviousPage"] = Request.UrlReferrer;
-            }
-        }
-
-        public IQueryable<Category> GridViewCategories_GetData()
+        public IQueryable<Category> CategoryListView_GetData()
         {
             this.OnCategoriesGetData?.Invoke(this, null);
             return this.Model.Categories.OrderBy(x => x.Id);
         }
-
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void GridViewCategories_UpdateItem(int? id)
+        public void CategoryListView_UpdateItem(int? id, string name)
         {
-            var name = ((TextBox)GridViewCategories.Rows[index: 0].FindControl("EditName")).Text;
-            this.CategoryService.UpdateName(id, name);
+            this.OnCategoryEdit?.Invoke(this, new CategoryEventArgs(name, (int)id));
         }
 
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void GridViewCategories_DeleteItem(int? id)
+        public void CategoryListView_DeleteItem(int? id)
         {
-            this.OnCategoriesDeliteData?.Invoke(this, null);
+            this.OnCategoryDelite?.Invoke(this, new CategoryEventArgs(null, (int)id));
         }
-
-        protected void ButtonCreate_Click(object sender, EventArgs e)
+     
+        public void CategoryListView_InsertItem(object sender, EventArgs e)
         {
-            string name = this.CategoryCreate.Text;
-            this.CategoryService.Create(name);
-            this.Response.Redirect("~/Admin/CategoriesView.aspx");
-        }
-
-        protected void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            this.Response.Redirect("~/Admin/CategoriesView.aspx");
-        }
-
-        protected void GridViewCategories_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ButtonAdd_Click(object sender, EventArgs e)
-        {
-            this.CreareItem.Visible = true;
-            this.ButtonAdd.Visible = false;
+            this.OnCategoryCreate?.Invoke(this, null);
         }
     }
 }

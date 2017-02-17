@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.ModelBinding;
 using WebFormsMvp;
 
 namespace OnLineShop.MVP.Categories
@@ -6,12 +7,15 @@ namespace OnLineShop.MVP.Categories
     public interface ICategoriesView : IView<CategoriesViewModel>
     {
         event EventHandler OnCategoriesGetData;
+        
+        event EventHandler <CategoryEventArgs>OnCategoryEdit;
+        
+        event EventHandler<CategoryEventArgs> OnCategoryDelite;
 
-        event EventHandler OnCategoriesEditData;
+        event EventHandler OnCategoryCreate;
 
-        event EventHandler OnCategoriesDeliteData;
+        ModelStateDictionary ModelState { get; }
 
-        event EventHandler OnCategoriesGetById;
-
+        bool TryUpdateModel<TModel>(TModel model) where TModel : class;
     }
 }

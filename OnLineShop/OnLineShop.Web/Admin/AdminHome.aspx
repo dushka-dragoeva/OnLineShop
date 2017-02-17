@@ -4,7 +4,7 @@
     AutoEventWireup="true" 
     CodeBehind="AdminHome.aspx.cs" 
     Inherits="OnLineShop.Web.Admin.AdminHome" %>
-<%@ Register Src="~/Admin/CategoriesControl.ascx" TagPrefix="uc" TagName="AdminCategories" %>
+
 
 <asp:Content ContentPlaceHolderID="HeaderContent" runat="server">
  <%--   
@@ -27,6 +27,5 @@
         <li><a runat="server" href="~/Admin/SizesView">Размери</a></li>
     </ul>
 
- <%-- <uc:AdminCategories runat="server" ID="EditCategories" />--%>
 
 </asp:Content>
