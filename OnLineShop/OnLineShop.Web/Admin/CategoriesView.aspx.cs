@@ -17,8 +17,6 @@ namespace OnLineShop.Web.Admin
         public event EventHandler<CategoryEventArgs> OnCategoryDelite;
         public event EventHandler OnCategoryCreate;
 
-        public CategoryEventArgs categoryEventArgs;
-
         public IQueryable<Category> CategoryListView_GetData()
         {
             this.OnCategoriesGetData?.Invoke(this, null);
@@ -26,7 +24,7 @@ namespace OnLineShop.Web.Admin
         }
         public void CategoryListView_UpdateItem(int? id, string name)
         {
-            this.OnCategoryEdit?.Invoke(this, new CategoryEventArgs((int)id,name));
+            this.OnCategoryEdit?.Invoke(this, new CategoryEventArgs((int)id, name));
         }
 
         public void CategoryListView_DeleteItem(int? id)

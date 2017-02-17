@@ -1,18 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoriesView.aspx.cs" Inherits="OnLineShop.Web.Admin.CategoriesView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SizesAdminView.aspx.cs" Inherits="OnLineShop.Web.Admin.SizesAdminView" %>
 
 <%@ Register Src="~/UserControl/AdminNavigation.ascx" TagPrefix="uc" TagName="AdminNav" %>
-<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
-
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <uc:AdminNav runat="server" ID="AdminNav" />
-    <h4>Редактиране Категории</h4>
+    <h4>Редактиране Размери</h4>
 
-    <asp:ListView ID="CategoryListView"
+    <asp:ListView ID="SizeListView"
         runat="server"
-        ItemType="OnLineShop.Data.Models.Category"
-        SelectMethod="CategoryListView_GetData"
-        InsertMethod="CategoryListView_InsertItem"
-        DeleteMethod="CategoryListView_DeleteItem"
-        UpdateMethod="CategoryListView_UpdateItem"
+        ItemType="OnLineShop.Data.Models.Size"
+        SelectMethod="SizeListView_GetData"
+        InsertMethod="SizeListView_InsertItem"
+        DeleteMethod="SizeListView_DeleteItem"
+        UpdateMethod="SizeListView_UpdateItem"
         InsertItemPosition="LastItem"
         DataKeyNames="Id">
         <LayoutTemplate>
@@ -22,21 +21,20 @@
                         <tbody>
                             <tr>
                                 <th scope="col">
-                                    <asp:LinkButton Text="Категории" runat="server" ID="LinkButtonSortByCategory" CommandName="Sort" CommandArgument="Name" />
+                                    <asp:LinkButton Text="Размери" runat="server" ID="LinkButtonSortBySize" CommandName="Sort" CommandArgument="Value" />
                                 </th>
-                                  <th scope="col">Редактирай</th>
+                                <th scope="col">Редактирай</th>
                                 <th scope="col">Изтрий</th>
-                            </tr>
-                            <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
-                            <tr class="active">
-                                <td colspan="3">
-                                    <asp:DataPager runat="server" ID="DataPagerCategories" PageSize="5">
-                                        <Fields>
-                                            <asp:NumericPagerField />
-                                        </Fields>
-                                    </asp:DataPager>
-                                </td>
-                            </tr>
+                                <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
+                                <tr class="active">
+                                    <td colspan="3">
+                                        <asp:DataPager runat="server" ID="DataPagerCategories" PageSize="5">
+                                            <Fields>
+                                                <asp:NumericPagerField />
+                                            </Fields>
+                                        </asp:DataPager>
+                                    </td>
+                                </tr>
                         </tbody>
                     </table>
                 </div>
@@ -45,7 +43,7 @@
         <ItemTemplate>
             <tr>
                 <td>
-                    <asp:LinkButton ID="LinkCategoryName" runat="server"><%#: Item.Name %></asp:LinkButton>
+                    <asp:LinkButton ID="LinkSizeName" runat="server"><%#: Item.Value %></asp:LinkButton>
                 </td>
 
                 <td>
@@ -59,7 +57,7 @@
         <EditItemTemplate>
             <tr>
                 <td>
-                    <asp:TextBox runat="server" ID="TextBoxName" Text="<%#: BindItem.Name %>" />
+                    <asp:TextBox runat="server" ID="TextBoxName" Text="<%#: BindItem.Value %>" />
                 </td>
                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator1"
@@ -69,7 +67,7 @@
                     ErrorMessage="Невалидни символи"
                     Display="Dynamic"
                     ForeColor="Red"
-                    ValidationExpression="^[a-zA-Zа-яА-Я0-9\s\-]{2,20}$">
+                    ValidationExpression="^[a-zA-Zа-яА-Я0-9\s\-]{1,20}$">
                 </asp:RegularExpressionValidator>
                 <td>
                     <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Save" CommandName="Update" />
@@ -82,7 +80,7 @@
         <InsertItemTemplate>
             <tr>
                 <td>
-                    <asp:TextBox runat="server" ID="InsertBoxName" Text="<%#: BindItem.Name %>" />
+                    <asp:TextBox runat="server" ID="InsertBoxName" Text="<%#: BindItem.Value %>" />
                 </td>
                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator1"
@@ -91,7 +89,7 @@
                     ErrorMessage="Невалидни символи"
                     Display="Dynamic"
                     ForeColor="Red"
-                    ValidationExpression="^[a-zA-Zа-яА-Я0-9\s\-]{2,20}$">
+                    ValidationExpression="^[a-zA-Zа-яА-Я0-9\s\-]{1,20}$">
                 </asp:RegularExpressionValidator>
                 <td>
                     <asp:LinkButton runat="server" ID="LinkButtonEdit" Text="Insert" CommandName="Insert" />

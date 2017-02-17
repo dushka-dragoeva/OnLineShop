@@ -60,6 +60,8 @@
     <Compile Include="Brands\Admin\IBrandsAdminView.cs" />
     <Compile Include="Brands\BrandIdEventArgs.cs" />
     <Compile Include="Brands\IBrandIdEventArgs.cs" />
+    <Compile Include="Sizes\ISizesAdminView.cs" />
+    <Compile Include="Sizes\SizeEventArgs.cs" />
     <Compile Include="Categories\CategoriesPresenter.cs" />
     <Compile Include="Categories\CategoriesViewModel.cs" />
     <Compile Include="Categories\CategoryEventArgs.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="Models\ShoppingCartActions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sizes\SizesAdminPresenter.cs" />
+    <Compile Include="Sizes\SizesAdminViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnLineShop.Data.Models\OnLineShop.Data.Models.csproj">

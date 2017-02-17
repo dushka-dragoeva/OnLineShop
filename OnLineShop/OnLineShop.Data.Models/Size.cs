@@ -22,7 +22,7 @@ namespace OnLineShop.Data.Models
 
         [Required]
         [Index(IsUnique = true)]
-        [MinLength(Constants.NameMinLength)]
+        [MinLength(1)]
         [MaxLength(Constants.NameMaxLength)]
         [RegularExpression(Constants.EnBgDigitSpaceMinus)]
         public string Value { get; set; }
