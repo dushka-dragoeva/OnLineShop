@@ -10,7 +10,7 @@
 namespace OnLineShop.Web.Admin {
     
     
-    public partial class CategoriesView {
+    public partial class BrandsAdminView {
         
         /// <summary>
         /// AdminNav control.
@@ -22,12 +22,12 @@ namespace OnLineShop.Web.Admin {
         protected global::OnLineShop.Web.UserControl.AdminNavigation AdminNav;
         
         /// <summary>
-        /// CategoryListView control.
+        /// BrandListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView CategoryListView;
+        protected global::System.Web.UI.WebControls.ListView BrandListView;
     }
 }

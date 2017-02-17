@@ -36,7 +36,10 @@ namespace OnLineShop.MVP.Categories
             var category = new Category();
             category.Id = e.Id;
             category.Name = e.Name;
-            this.categoryService.Update(category);
+            if (this.View.ModelState.IsValid)
+            {
+                this.categoryService.Update(category);
+            }
         }
 
         private void View_OnCategoriesDelete(object sender, CategoryEventArgs e)

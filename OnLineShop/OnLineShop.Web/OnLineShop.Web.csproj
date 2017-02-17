@@ -203,7 +203,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\AdminHome.aspx" />
+    <Content Include="Admin\BrandsAdminView.aspx" />
     <Content Include="Admin\CategoriesView.aspx" />
+    <Content Include="Admin\SizesAdminView.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -247,6 +249,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="UserControl\AdminNavigation.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -374,12 +377,26 @@
     <Compile Include="Admin\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\BrandsAdminView.aspx.cs">
+      <DependentUpon>BrandsAdminView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BrandsAdminView.aspx.designer.cs">
+      <DependentUpon>BrandsAdminView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CategoriesView.aspx.cs">
       <DependentUpon>CategoriesView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\CategoriesView.aspx.designer.cs">
       <DependentUpon>CategoriesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SizesAdminView.aspx.cs">
+      <DependentUpon>SizesAdminView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SizesAdminView.aspx.designer.cs">
+      <DependentUpon>SizesAdminView.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -432,6 +449,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserControl\AdminNavigation.ascx.cs">
+      <DependentUpon>AdminNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\AdminNavigation.ascx.designer.cs">
+      <DependentUpon>AdminNavigation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -442,6 +466,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>

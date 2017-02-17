@@ -54,6 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brands\Admin\BrandsAdminPresenter.cs" />
+    <Compile Include="Brands\Admin\BrandsAdminViewModel.cs" />
+    <Compile Include="Brands\Admin\BrandEventArgs.cs" />
+    <Compile Include="Brands\Admin\IBrandsAdminView.cs" />
+    <Compile Include="Brands\BrandIdEventArgs.cs" />
+    <Compile Include="Brands\IBrandIdEventArgs.cs" />
     <Compile Include="Categories\CategoriesPresenter.cs" />
     <Compile Include="Categories\CategoriesViewModel.cs" />
     <Compile Include="Categories\CategoryEventArgs.cs" />
@@ -80,6 +86,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Brands\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

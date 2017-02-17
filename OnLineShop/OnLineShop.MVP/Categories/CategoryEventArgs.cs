@@ -4,11 +4,11 @@ namespace OnLineShop.MVP.Categories
 {
     public class CategoryEventArgs : EventArgs
     {
-        public CategoryEventArgs(string name, int id)
+        public CategoryEventArgs(int id, string name)
 
         {
-            this.Name = name;
             this.Id = id;
+            this.Name = name;
         }
 
         public int Id { get; set; }

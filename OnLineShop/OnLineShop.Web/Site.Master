@@ -74,22 +74,21 @@
                     </asp:LoginView>
                 </div>
             </div>
-               <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
+            <%--  <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
                  
-            </asp:ContentPlaceHolder>
+            </asp:ContentPlaceHolder>--%>
         </div>
 
         <div class="container body-content">
-          
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                 
             </asp:ContentPlaceHolder>
-            
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
         </div>
+        <hr />
+        <footer>
+            <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+        </footer>
+
     </form>
 </body>
 </html>

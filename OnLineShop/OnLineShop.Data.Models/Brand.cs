@@ -33,6 +33,11 @@ namespace OnLineShop.Data.Models
         [RegularExpression(Constants.DescriptionRegex)]
         public string Description { get; set; }
 
+        [MinLength(5)]
+        [MaxLength(200)]
+        [RegularExpression(Constants.DescriptionRegex)]
+        public string ImageUrl { get; set; }
+
         public virtual ICollection<Product> Products
         {
             get

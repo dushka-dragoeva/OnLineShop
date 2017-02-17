@@ -5,27 +5,10 @@
     CodeBehind="AdminHome.aspx.cs" 
     Inherits="OnLineShop.Web.Admin.AdminHome" %>
 
-
-<asp:Content ContentPlaceHolderID="HeaderContent" runat="server">
- <%--   
-    
-    <ul>
-        <li><a runat="server" href="~/Admin/Product">ПродуктиView</a></li>
-        <li><a runat="server" href="~/Admin/CategoriesView">Катргории</a></li>
-        <li><a runat="server" href="~/Admin/Brands">Марки</a></li>
-    </ul>--%>
-
-</asp:Content>
+<%@ Register Src="~/UserControl/AdminNavigation.ascx" TagPrefix="uc" TagName="AdminNav" %>
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>Welcome Admin!</h2>
     
-    <ul>
-        <li><a runat="server" href="~/Admin/Product">Продукти</a></li>
-        <li><a runat="server" href="~/Admin/CategoriesView">Катeгории</a></li>
-        <li><a runat="server" href="~/Admin/BrandsView">Марки</a></li>
-        <li><a runat="server" href="~/Admin/SizesView">Размери</a></li>
-    </ul>
-
-
-</asp:Content>
+    <uc:AdminNav runat="server" ID="AdminNav"/>
+    <h2>Welcome Admin!</h2>
+  
+ </asp:Content>
