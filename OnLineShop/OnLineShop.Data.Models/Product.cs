@@ -31,7 +31,7 @@ namespace OnLineShop.Data.Models
         [Required]
         [Index(IsUnique = true)]
         [MinLength(Constants.NameMinLength)]
-        [MaxLength(Constants.NameMinLength)]
+        [MaxLength(Constants.NameMaxLength)]
         [RegularExpression(Constants.EnBgDigitSpaceMinus)]
         public string Name { get; set; }
 
@@ -43,7 +43,7 @@ namespace OnLineShop.Data.Models
 
         [Required]
         [MinLength(Constants.NameMinLength)]
-        [MaxLength(Constants.NameMinLength)]
+        [MaxLength(Constants.NameMaxLength)]
         [RegularExpression(Constants.DescriptionRegex)]
         public string ModelNumber { get; set; }
 
@@ -65,12 +65,12 @@ namespace OnLineShop.Data.Models
 
         [Required]
         [Range(int.MinValue, int.MaxValue)]
-        public decimal price { get; set; }
+        public decimal Price { get; set; }
 
-        public bool isInPromotion { get; set; }
+        public bool IsInPromotion { get; set; }
 
         [Range(int.MinValue, int.MaxValue)]
-        public decimal promoPrice { get; set; }
+        public decimal PromoPrice { get; set; }
 
         public virtual ICollection<Photo> Photos
         {
