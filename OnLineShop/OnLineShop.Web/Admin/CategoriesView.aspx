@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CategoriesView.aspx.cs" Inherits="OnLineShop.Web.Admin.CategoriesView" %>
 
 <%@ Register Src="~/UserControl/AdminNavigation.ascx" TagPrefix="uc" TagName="AdminNav" %>
-<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
-
-    <uc:AdminNav runat="server" ID="AdminNav" />
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    
+    <uc:AdminNav runat="server" ID="AdminNav"/>
+    <h2>Welcome Admin!</h2>
     <h4>Редактиране Категории</h4>
 
     <asp:ListView ID="CategoryListView"

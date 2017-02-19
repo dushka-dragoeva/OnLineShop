@@ -19,11 +19,11 @@ namespace OnLineShop.Data.Services
             return this.Context.SaveChanges();
         }
 
-        public void Delete(int? id)
+        public int Delete(int? id)
         {
             var entity = this.GetById(id);
             entity.IsDeleted = true;
-            this.Context.SaveChanges();
+           return this.Context.SaveChanges();
         }
 
         public IQueryable<Brand> GetAll()
@@ -41,13 +41,13 @@ namespace OnLineShop.Data.Services
             return this.Context.Brands.Find(name);
         }
 
-        public void Update(Brand Brand)
+        public int Update(Brand Brand)
         {
 
             Brand BrandToUpdate = this.Context.Brands.Find(Brand.Id);
             this.Context.Entry(BrandToUpdate).CurrentValues.SetValues(Brand);
 
-            this.Context.SaveChanges();
+          return  this.Context.SaveChanges();
         }
     }
 }

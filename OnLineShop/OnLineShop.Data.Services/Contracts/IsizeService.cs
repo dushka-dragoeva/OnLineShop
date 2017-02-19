@@ -9,9 +9,9 @@ namespace OnLineShop.Data.Services.Contracts
 
         Size GetById(int? id);
 
-        void Update(Size size);
+        int Update(Size size);
 
-        void Delete(int? id);
+        int Delete(int? id);
 
         int Insert(Size size);
     }

@@ -205,10 +205,30 @@
     <Content Include="Admin\AdminHome.aspx" />
     <Content Include="Admin\BrandsAdminView.aspx" />
     <Content Include="Admin\CategoriesView.aspx" />
+    <Content Include="Admin\ProducsAdminView.aspx" />
+    <Content Include="Admin\ProductDetailsAdminView.aspx" />
     <Content Include="Admin\SizesAdminView.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\6694-NOIR-10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\6694-NOIR-11.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\6694-NOIR-9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\675-BLANC-33.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\675-BLANC-34.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\675-BLANC-35.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -391,6 +411,20 @@
     <Compile Include="Admin\CategoriesView.aspx.designer.cs">
       <DependentUpon>CategoriesView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ProducsAdminView.aspx.cs">
+      <DependentUpon>ProducsAdminView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProducsAdminView.aspx.designer.cs">
+      <DependentUpon>ProducsAdminView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductDetailsAdminView.aspx.cs">
+      <DependentUpon>ProductDetailsAdminView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductDetailsAdminView.aspx.designer.cs">
+      <DependentUpon>ProductDetailsAdminView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SizesAdminView.aspx.cs">
       <DependentUpon>SizesAdminView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -466,7 +500,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrandsAdminView.aspx.cs" Inherits="OnLineShop.Web.Admin.BrandsAdminView" %>
-
 <%@ Register Src="~/UserControl/AdminNavigation.ascx" TagPrefix="uc" TagName="AdminNav" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <uc:AdminNav runat="server" ID="AdminNav" />
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    
+    <uc:AdminNav runat="server" ID="AdminNav"/>
+    <h2>Welcome Admin!</h2>
     <h4>Редактиране Марки</h4>
     <asp:ListView ID="BrandListView"
         runat="server"

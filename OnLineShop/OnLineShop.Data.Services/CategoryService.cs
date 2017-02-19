@@ -18,11 +18,11 @@ namespace OnLineShop.Data.Services
             return this.Context.SaveChanges();
         }
 
-        public void Delete(int? id)
+        public int Delete(int? id)
         {
             var entity = this.GetById(id);
             entity.IsDeleted = true;
-            this.Context.SaveChanges();
+            return this.Context.SaveChanges();
         }
 
         public IQueryable<Category> GetAll()
@@ -40,13 +40,13 @@ namespace OnLineShop.Data.Services
             return this.Context.Categories.Find(name);
         }
 
-        public void Update(Category category)
+        public int Update(Category category)
         {
 
             Category categoryToUpdate = this.Context.Categories.Find(category.Id);
             this.Context.Entry(categoryToUpdate).CurrentValues.SetValues(category);
 
-            this.Context.SaveChanges();
+            return this.Context.SaveChanges();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace OnLineShop.Data.Services
 {
-    public class SizeService:ISizeService
+    public class SizeService : ISizeService
 
     {
         private readonly IOnLineShopDbContext Context;
@@ -20,11 +20,11 @@ namespace OnLineShop.Data.Services
             return this.Context.SaveChanges();
         }
 
-        public void Delete(int? id)
+        public int Delete(int? id)
         {
             var entity = this.GetById(id);
             entity.IsDeleted = true;
-            this.Context.SaveChanges();
+            return this.Context.SaveChanges();
         }
 
         public IQueryable<Size> GetAll()
@@ -37,12 +37,12 @@ namespace OnLineShop.Data.Services
             return this.Context.Sizes.Find(id);
         }
 
-        public void Update(Size Size)
+        public int Update(Size Size)
         {
             Size SizeToUpdate = this.Context.Sizes.Find(Size.Id);
             this.Context.Entry(SizeToUpdate).CurrentValues.SetValues(Size);
 
-            this.Context.SaveChanges();
+            return this.Context.SaveChanges();
         }
     }
 }

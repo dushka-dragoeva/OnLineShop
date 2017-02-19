@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SizesAdminView.aspx.cs" Inherits="OnLineShop.Web.Admin.SizesAdminView" %>
 
 <%@ Register Src="~/UserControl/AdminNavigation.ascx" TagPrefix="uc" TagName="AdminNav" %>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <uc:AdminNav runat="server" ID="AdminNav" />
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+    
+    <uc:AdminNav runat="server" ID="AdminNav"/>
+    <h2>Welcome Admin!</h2>
     <h4>Редактиране Размери</h4>
 
     <asp:ListView ID="SizeListView"

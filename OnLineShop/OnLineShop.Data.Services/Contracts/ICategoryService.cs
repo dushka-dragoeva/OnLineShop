@@ -15,9 +15,9 @@ namespace OnLineShop.Data.Services
 
         Category GetByName(string name);
 
-        void Update(Category category);
+        int Update(Category category);
 
-        void Delete(int? id);
+        int Delete(int? id);
 
         int Insert(Category category);
     }

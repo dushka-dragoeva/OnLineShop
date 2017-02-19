@@ -74,7 +74,7 @@
                     </asp:LoginView>
                 </div>
             </div>
-            <%--  <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
+<%--              <asp:ContentPlaceHolder ID="HeaderContent" runat="server">
                  
             </asp:ContentPlaceHolder>--%>
         </div>
