@@ -2,19 +2,8 @@
 {
     public class Constants
     {
-        //public const string En = @"^[a-zA-Z]+$";
-        //public const string EnMinus = @"^[a-zA-Z\-]+$";
-        //public const string EnSpace = @"^[a-zA-Z\s]+$";
-        ////public const string EnSpaceMinus = @"^[a-zA-Z\s\-]+$";
-        //public const string EnBg = @"^[a-zA-Zа-яА-Я]+$";
-        //public const string EnBgMinus = @"^[a-zA-Zа-яА-Я\-]+$";
-        //public const string EnBgSpace = @"^[a-zA-Zа-яА-Я\s]+$";
         public const string EnBgSpaceMinus = @"^[a-zA-Zа-яА-Я\s\-]+$";
         public const string EnBgDigitSpaceMinus = @"^[a-zA-Zа-яА-Я0-9\s\-]+$";
-        //public const string Bg = @"^[а-яА-Я]+$";
-        //public const string BgMinus = @"^[а-яА-Я\-]+$";
-        //public const string BgSpace = @"^[а-яА-Я\s]+$";
-        //public const string BgSpaceMinus = @"^[а-яА-Я\s\-]+$";
         public const string DescriptionRegex = @"^[a-zA-Zа-яА-Я0-9\s\-\.,!():;?/+_%@""'#&=\*]+$";
 
         // sourse http://stackoverflow.com/questions/8908976/c-sharp-regex-to-validate-phone-number
@@ -25,8 +14,9 @@
 
         // source http://stackoverflow.com/questions/5717312/regular-expression-for-url
         public const string UrlRegex = @"^(http|https|ftp|)\://|[a-zA-Z0-9\-\.]+\.[a-zA-Z](:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$";
+
         public const int NameMinLength = 1;
-        public const int NameMaxLength= 20;
+        public const int NameMaxLength= 40;
 
         public const int DescriptionMinLength = 10;
         public const int DescriptionMaxLength = 500;

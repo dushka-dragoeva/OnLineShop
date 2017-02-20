@@ -229,13 +229,16 @@
     <Content Include="Content\Images\675-BLANC-35.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Images\Alefa.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -270,6 +273,8 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="UserControl\AdminNavigation.ascx" />
+    <Content Include="UserControl\ClientNavigation.ascx" />
+    <Content Include="UserControl\UploadImageControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -463,6 +468,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702190941288_ProductModelUpdated.cs" />
+    <Compile Include="Migrations\201702190941288_ProductModelUpdated.Designer.cs">
+      <DependentUpon>201702190941288_ProductModelUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="NinjectBindingsModules\MvpNinjectModule.cs" />
     <Compile Include="PresenterFactories\ICustomPresenterFactory.cs" />
@@ -490,12 +500,33 @@
     <Compile Include="UserControl\AdminNavigation.ascx.designer.cs">
       <DependentUpon>AdminNavigation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ClientNavigation.ascx.cs">
+      <DependentUpon>ClientNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ClientNavigation.ascx.designer.cs">
+      <DependentUpon>ClientNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UploadImageControl.ascx.cs">
+      <DependentUpon>UploadImageControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\UploadImageControl.ascx.designer.cs">
+      <DependentUpon>UploadImageControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -519,6 +550,11 @@
       <Project>{53BB6785-696A-4FCB-87D4-A701489208FE}</Project>
       <Name>OnLineShop.MVP</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702190941288_ProductModelUpdated.resx">
+      <DependentUpon>201702190941288_ProductModelUpdated.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

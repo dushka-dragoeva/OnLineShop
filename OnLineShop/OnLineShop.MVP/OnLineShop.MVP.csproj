@@ -64,6 +64,7 @@
     <Compile Include="Brands\Admin\IBrandsAdminView.cs" />
     <Compile Include="Brands\BrandIdEventArgs.cs" />
     <Compile Include="Brands\IBrandIdEventArgs.cs" />
+    <Compile Include="Photos\ImageUploadEventArgs.cs" />
     <Compile Include="Products\Admin\ProductDetails\IProductDetailsAdminView.cs" />
     <Compile Include="Sizes\ISizesAdminView.cs" />
     <Compile Include="Sizes\SizeEventArgs.cs" />

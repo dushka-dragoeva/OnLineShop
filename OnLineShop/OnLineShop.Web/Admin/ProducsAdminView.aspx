@@ -49,7 +49,8 @@
         </LayoutTemplate>
         <ItemTemplate>
             <tr>
-                <td>No Picture
+                <td>
+                    <asp:Image ID="Image1" ImageUrl="<%#:Item.PictureUrl %>" runat="server" AlternateText="Picture" Width="40" />
                 </td>
                 <td>
                     <asp:HyperLink NavigateUrl='<%# string.Format("~/Admin/ProductDetailsAdminView.aspx?id={0}", Item.Id) %>' runat="server" CssClass="glyphicon glyphicon-pencil" Text="  <%#:Item.Name %>" />
@@ -75,8 +76,6 @@
         </ItemTemplate>
         <InsertItemTemplate>
         </InsertItemTemplate>
-
-
         <EmptyDataTemplate>
             Няма продукти в тази категория.
         </EmptyDataTemplate>

@@ -11,6 +11,8 @@ namespace OnLineShop.Data.Models
     public class Product : IDbModel, INamable, IDescribable
     {
         public const int NumberOfPictures = 3;
+        public const int UrlLengthMinLength = 6;
+        public const int UrlLengthMaxValue = 300;
 
         private ICollection<Size> sizes;
         private ICollection<Photo> photos;
@@ -29,7 +31,6 @@ namespace OnLineShop.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [Index(IsUnique = true)]
         [MinLength(Constants.NameMinLength)]
         [MaxLength(Constants.NameMaxLength)]
         [RegularExpression(Constants.EnBgDigitSpaceMinus)]
@@ -61,7 +62,11 @@ namespace OnLineShop.Data.Models
 
         public virtual Brand Brand { get; set; }
 
-      //  public virtual CartItem CartItem { get; set; }
+        //  public virtual CartItem CartItem { get; set; }
+
+        [MinLength(UrlLengthMinLength)]
+        [MaxLength(UrlLengthMaxValue)]
+        public string PictureUrl { get; set; }
 
         [Required]
         [Range(int.MinValue, int.MaxValue)]
