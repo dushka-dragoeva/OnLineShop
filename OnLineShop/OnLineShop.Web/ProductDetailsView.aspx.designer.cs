@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnLineShop.Web.UserControl
+namespace OnLineShop.Web
 {
 
 
-    public partial class ClientNavigation
+    public partial class ProductDetailsView
     {
     }
 }

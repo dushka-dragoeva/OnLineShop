@@ -3,33 +3,38 @@ using OnLineShop.Data;
 using OnLineShop.Data.Models;
 using OnLineShop.Data.Services;
 using OnLineShop.Data.Services.Contracts;
+using OnLineShop.MVP.Products.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace OnLineShop.Web.Admin
 {
-    public partial class ProducsAdminView : System.Web.UI.Page
+    [PresenterBinding(typeof(ProductsAdminPresenter))]
+    public partial class ProducsAdminView : MvpPage<ProductsAdminViewModel>, IProductsAdminView 
     {
-        private readonly ProductService ps = new ProductService(new OnLineShopDbContext());
+       // private readonly ProductService ps = new ProductService(new OnLineShopDbContext());
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            this.ListViewProducts.InsertItemPosition = InsertItemPosition.LastItem;
-        }
+        public event EventHandler OnProductsGetData;
+        public event EventHandler<ProductsAdminEventArgs> OnProductDelite;
+                    
 
         public IQueryable<Product> ListViewProducts_GetData()
         {
-            return this.ps.GetAllWithCategoryBrandPhotos().OrderBy(p => p.Id);
+            this.OnProductsGetData?.Invoke(this, null);
+
+            return this.Model.Products;
         }
                       
         // The id parameter name should match the DataKeyNames value set on the control
-        public void ListViewProducts_DeleteItem(int id)
+        public void ListViewProducts_DeleteItem(int? id)
         {
-            this.ps.Delete(id);
+            this.OnProductDelite?.Invoke(this, new ProductsAdminEventArgs((int)id));
         }
     }
 }

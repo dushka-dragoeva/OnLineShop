@@ -9,9 +9,9 @@ namespace OnLineShop.Data.Services.Contracts
 {
     public interface IProductService
     {
-        IQueryable<Product> GetAll();
+        IQueryable<Product> GetAllWithCategoryBrand();
 
-        IQueryable<Product> GetAllWithCategoryBrandPhotos();
+        IQueryable<Product> GetAllByCategory(int categoryId);
 
         Product GetById(int? id);
 

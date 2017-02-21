@@ -10,6 +10,7 @@ namespace OnLineShop.Data.Services
     public interface ICategoryService
     {
         IQueryable<Category> GetAll();
+        IQueryable<Category> GetAllWithProducts();
 
         Category GetById(int? id);
 

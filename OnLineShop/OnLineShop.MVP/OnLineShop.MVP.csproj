@@ -64,14 +64,28 @@
     <Compile Include="Brands\Admin\IBrandsAdminView.cs" />
     <Compile Include="Brands\BrandIdEventArgs.cs" />
     <Compile Include="Brands\IBrandIdEventArgs.cs" />
+    <Compile Include="Categories\Client\CategoriesPresenter.cs" />
+    <Compile Include="Categories\Client\CategoriesViewModel.cs" />
+    <Compile Include="Categories\Client\CategoryEventArgs.cs" />
+    <Compile Include="Categories\Client\ICategoriesView.cs" />
     <Compile Include="Photos\ImageUploadEventArgs.cs" />
-    <Compile Include="Products\Admin\ProductDetails\IProductDetailsAdminView.cs" />
+    <Compile Include="Products\Admin\Details\IProductDetailsAdminView.cs" />
+    <Compile Include="Products\Admin\Details\ProductDetailsAdminPresenter.cs" />
+    <Compile Include="Products\Admin\Details\ProductDetailsAdminEventArgs.cs" />
+    <Compile Include="Products\Admin\Details\ProductDetailsAdminViewModel.cs" />
+    <Compile Include="Products\Admin\ProductsAdminEventArgs.cs" />
+    <Compile Include="Products\Admin\ProductsAdminViewModel.cs" />
+    <Compile Include="Products\Admin\IProductsAdminView.cs" />
+    <Compile Include="Products\Admin\ProductsAdminPresenter.cs" />
+    <Compile Include="Products\Client\IProductsView.cs" />
+    <Compile Include="Products\Client\ProductsPresenter.cs" />
+    <Compile Include="Products\Client\ProductsViewModel.cs" />
     <Compile Include="Sizes\ISizesAdminView.cs" />
     <Compile Include="Sizes\SizeEventArgs.cs" />
-    <Compile Include="Categories\CategoriesPresenter.cs" />
-    <Compile Include="Categories\CategoriesViewModel.cs" />
-    <Compile Include="Categories\CategoryEventArgs.cs" />
-    <Compile Include="Categories\ICategoriesView.cs" />
+    <Compile Include="Categories\Admin\CategoriesAdminPresenter.cs" />
+    <Compile Include="Categories\Admin\CategoriesAdminViewModel.cs" />
+    <Compile Include="Categories\Admin\CategoryAdminEventArgs.cs" />
+    <Compile Include="Categories\Admin\ICategoriesAdminView.cs" />
     <Compile Include="Factories\ICustomPresenterFactory.cs" />
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="Models\ShoppingCartActions.cs" />
@@ -99,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Brands\User\" />
+    <Folder Include="Products\Client\Details\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

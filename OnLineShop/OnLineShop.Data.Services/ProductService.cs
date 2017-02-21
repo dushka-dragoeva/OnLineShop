@@ -15,9 +15,26 @@ namespace OnLineShop.Data.Services
             this.Context = context;
         }
 
-        public IQueryable<Product> GetAll()
+        public IQueryable<Product> GetAllWithCategoryBrand()
         {
-            return this.Context.Products.Where(c => c.IsDeleted == false);
+            var pr= Context.Products
+                .Where(p => p.IsDeleted == false)
+                 .Include(p => p.Brand)
+                 .Include(p => p.Category);
+
+            return this.Context.Products
+                .Where(p => p.IsDeleted == false)
+                 .Include(p => p.Brand)
+                 .Include(p => p.Category);
+        }
+
+
+        public IQueryable<Product> GetAllByCategory(int categoryId)
+        {
+            return this.Context.Products
+                .Where(p => p.IsDeleted == false)
+                .Where(p => p.CategoryId == categoryId)
+                .Include(p => p.Brand);
         }
 
         public Product GetById(int? id)
@@ -45,14 +62,6 @@ namespace OnLineShop.Data.Services
             this.Context.Entry(productToUpdate).CurrentValues.SetValues(product);
 
             return this.Context.SaveChanges();
-        }
-
-        public IQueryable<Product> GetAllWithCategoryBrandPhotos()
-        {
-            return this.Context.Products
-                .Where(c => c.IsDeleted == false)
-                .Include(c => c.Category)
-                .Include(c => c.Brand);
         }
     }
 }

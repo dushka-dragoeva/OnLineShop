@@ -1,8 +1,8 @@
-﻿using System.Linq;
+﻿using OnLineShop.Data.Models;
 
-using OnLineShop.Data.Models;
+using System.Linq;
 
-namespace OnLineShop.MVP.Categories
+namespace OnLineShop.MVP.Categories.Client
 {
     public class CategoriesViewModel
     {

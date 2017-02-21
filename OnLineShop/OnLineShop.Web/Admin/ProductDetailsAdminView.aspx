@@ -21,7 +21,7 @@
                 <asp:Label ID="Label1" AssociatedControlID="TextBoxName" runat="server" Text="Заглавие"></asp:Label>
 
                 <asp:TextBox runat="server" ID="TextBoxName" class="form-control" Text="<%#: BindItem.Name %>" />
-                <%--<asp:RegularExpressionValidator
+                <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator2"
                     ControlToValidate="TextBoxName"
                     EnableClientScript="true"
@@ -34,11 +34,11 @@
                 <asp:CustomValidator
                     ErrorMessage="Заглавието трябва да бъде между 2 и 20 символа"
                     ControlToValidate="TextBoxName"
-                    OnServerValidate="Length_ServerValidate" runat="server" />--%>
+                    OnServerValidate="Length_ServerValidate" runat="server" />
 
                 <asp:Label ID="Label2" AssociatedControlID="TextBoxDescription" runat="server" Text="Описание"></asp:Label>
                 <asp:TextBox runat="server" ID="TextBoxDescription" class="form-control" Text="<%#: BindItem.Description %>" TextMode="MultiLine" />
-                <%-- <asp:RegularExpressionValidator
+                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator3"
                     ControlToValidate="TextBoxDescription"
                     EnableClientScript="true"
@@ -53,13 +53,13 @@
                     ControlToValidate="TextBoxDescription"
                     OnServerValidate="DescriptionLength_ServerValidate"
                     runat="server"
-                    Display="Dynamic" />--%>
+                    Display="Dynamic" />
 
                 <div class="row">
                     <div class=" col-md-4">
                         <asp:Label ID="Label3" AssociatedControlID="TextBoxModel" runat="server" Text="Модел"></asp:Label>
                         <asp:TextBox runat="server" ID="TextBoxModel" class="form-control" Text="<%#: BindItem.ModelNumber %>" />
-                        <%--<asp:RegularExpressionValidator
+                        <asp:RegularExpressionValidator
                             ID="RegularExpressionValidator4"
                             ControlToValidate="TextBoxModel"
                             EnableClientScript="true"
@@ -68,7 +68,7 @@
                             Display="Dynamic"
                             ForeColor="Red"
                             ValidationExpression="^[a-zA-Zа-яА-Я0-9\s\-]{2,20}$">
-                        </asp:RegularExpressionValidator>--%>
+                        </asp:RegularExpressionValidator>
                     </div>
                     <div class=" col-md-4">
                         <asp:Label ID="Label5" AssociatedControlID="DropDownCategories" runat="server" Text=" Категория"></asp:Label>
@@ -113,7 +113,7 @@
                         <div class="row">
                             <asp:Label ID="LabelPrice" AssociatedControlID="TextBoxQuantity" runat="server" Text="Количество"></asp:Label>
                             <asp:TextBox runat="server" ID="TextBoxQuantity" TextMode="Number" class="form-control" Text="<%#: BindItem.Quantity %>" Width="50%" />
-                            <%--                <asp:RequiredFieldValidator
+                                            <asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator1"
                                 runat="server" ErrorMessage="Количеството е задължителна"
                                 ControlToValidate="TextBoxQuantity">
@@ -127,12 +127,12 @@
                                 Type="Double"
                                 CssClass="form-control">
 
-                            </asp:RangeValidator>--%>
+                            </asp:RangeValidator>
                         </div>
                         <div class="row">
                             <asp:Label ID="Label7" AssociatedControlID="TextBoxPrice" runat="server" Text="Цена"></asp:Label>
                             <asp:TextBox runat="server" ID="TextBoxPrice"  class="form-control" Text="<%#: BindItem.Price %>" Width="50%" />
-                            <%-- <asp:RequiredFieldValidator
+                             <asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator2"
                                 runat="server" ErrorMessage="Цената е задължителна"
                                 ControlToValidate="TextBoxPrice"
@@ -141,13 +141,13 @@
                             <asp:RangeValidator ID="RangeValidator2"
                                 ControlToValidate="TextBoxPrice"
                                 runat="server"
-                                MinimumValue="-5"
+                                MinimumValue="0"
                                 MaximumValue="100000"
                                 ErrorMessage="Въведете положително число"
                                 Display="Dynamic"
                                 Type="Double"
                                 >
-                            </asp:RangeValidator>--%>
+                            </asp:RangeValidator>
                         </div>
                         <div class="row">
                         </div>
@@ -199,7 +199,7 @@
                 <asp:Label ID="Label1" AssociatedControlID="TextBoxName" runat="server" Text="Заглавие"></asp:Label>
 
                 <asp:TextBox runat="server" ID="TextBoxName" class="form-control" Text="<%#: BindItem.Name %>" />
-                <%-- <asp:RegularExpressionValidator
+                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator2"
                     ControlToValidate="TextBoxName"
                     EnableClientScript="true"
@@ -212,11 +212,11 @@
                 <asp:CustomValidator
                     ErrorMessage="Заглавието трябва да бъде между 2 и 20 символа"
                     ControlToValidate="TextBoxName"
-                    OnServerValidate="Length_ServerValidate" runat="server" />--%>
+                    OnServerValidate="Length_ServerValidate" runat="server" />
 
                 <asp:Label ID="Label2" AssociatedControlID="TextBoxDescription" runat="server" Text="Описание"></asp:Label>
                 <asp:TextBox runat="server" ID="TextBoxDescription" class="form-control" Text="<%#: BindItem.Description %>" TextMode="MultiLine" />
-                <%-- <asp:RegularExpressionValidator
+                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator3"
                     ControlToValidate="TextBoxDescription"
                     EnableClientScript="true"
@@ -231,13 +231,13 @@
                     ControlToValidate="TextBoxDescription"
                     OnServerValidate="DescriptionLength_ServerValidate"
                     runat="server"
-                    Display="Dynamic" />--%>
+                    Display="Dynamic" />
 
                 <div class="row">
                     <div class=" col-md-4">
                         <asp:Label ID="Label3" AssociatedControlID="TextBoxModel" runat="server" Text="Модел"></asp:Label>
                         <asp:TextBox runat="server" ID="TextBoxModel" class="form-control" Text="<%#: BindItem.ModelNumber %>" />
-                        <%-- <asp:RegularExpressionValidator
+                         <asp:RegularExpressionValidator
                             ID="RegularExpressionValidator4"
                             ControlToValidate="TextBoxModel"
                             EnableClientScript="true"
@@ -246,7 +246,7 @@
                             Display="Dynamic"
                             ForeColor="Red"
                             ValidationExpression="^[a-zA-Zа-яА-Я0-9\s\-]{2,20}$">
-                        </asp:RegularExpressionValidator>--%>
+                        </asp:RegularExpressionValidator>
                     </div>
                     <div class=" col-md-4">
                         <asp:Label ID="Label5" AssociatedControlID="DropDownCategories" runat="server" Text=" Категория"></asp:Label>
@@ -298,7 +298,7 @@
                         <div class="row">
                             <asp:Label ID="LabelPrice" AssociatedControlID="TextBoxQuantity" runat="server" Text="Количество"></asp:Label>
                             <asp:TextBox runat="server" ID="TextBoxQuantity" TextMode="Number" class="form-control" Text="<%#: BindItem.Quantity %>" Width="50%" />
-                            <%-- <asp:RequiredFieldValidator
+                             <asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator1"
                                 runat="server" ErrorMessage="Количеството е задължителна"
                                 ControlToValidate="TextBoxQuantity">
@@ -312,20 +312,20 @@
                                 Type="Double"
                                 CssClass="form-control">
 
-                            </asp:RangeValidator>--%>
+                            </asp:RangeValidator>
                         </div>
                         <div class="row">
                             <asp:Label ID="Label7" AssociatedControlID="TextBoxPrice"  runat="server" Text="Цена"></asp:Label>
-                            <asp:TextBox runat="server" ID="TextBoxPrice" TextMode="Number" class="form-control" Text="<%#: BindItem.Price %>" Width="50%" />
-<%--                            <asp:RequiredFieldValidator
+                            <input  type="number" typeof="decimal"  runat="server" ID="TextBoxPrice" class="form-control" value="<%#: BindItem.Price %>" Width="50%" />
+                            <asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator2"
                                 runat="server" ErrorMessage="Цената е задължителна"
                                 ControlToValidate="TextBoxPrice"
                                 Display="Dynamic">
-                            </asp:RequiredFieldValidator>--%>
+                            </asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator runat="server" ControlToValidate="TextBoxPrice" 
                                 ValidationExpression="[0-9\.]{1,9}" 
-                                ErrorMessage="Цената е цифра." 
+                                ErrorMessage="Цената е с 2 символа след десетичната запетая." 
                                 Display="Dynamic"></asp:RegularExpressionValidator>
                         
                         </div>
@@ -363,6 +363,7 @@
                     </div>
                 </div>
             </div>
+            <validationsummary runat="server" ForeColor="Red"  EnableModelValidation="true"></validationsummary>
         </InsertItemTemplate>
     </asp:FormView>
 </asp:Content>

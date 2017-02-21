@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace OnLineShop.MVP.Categories
+namespace OnLineShop.MVP.Categories.Admin
 {
-    public class CategoryEventArgs : EventArgs
+    public class CategoryAdminEventArgs : EventArgs
     {
-        public CategoryEventArgs(int id, string name)
+        public CategoryAdminEventArgs(int id, string name)
 
         {
             this.Id = id;

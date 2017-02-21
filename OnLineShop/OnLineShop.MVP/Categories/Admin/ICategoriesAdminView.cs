@@ -1,16 +1,17 @@
-﻿using System;
+﻿
+using System;
 using System.Web.ModelBinding;
 using WebFormsMvp;
 
-namespace OnLineShop.MVP.Categories
+namespace OnLineShop.MVP.Categories.Admin
 {
-    public interface ICategoriesView : IView<CategoriesViewModel>
+    public interface ICategoriesAdminView : IView<CategoriesAdminViewModel>
     {
         event EventHandler OnCategoriesGetData;
         
-        event EventHandler <CategoryEventArgs>OnCategoryEdit;
+        event EventHandler <CategoryAdminEventArgs>OnCategoryEdit;
         
-        event EventHandler<CategoryEventArgs> OnCategoryDelite;
+        event EventHandler<CategoryAdminEventArgs> OnCategoryDelite;
 
         event EventHandler OnCategoryCreate;
 

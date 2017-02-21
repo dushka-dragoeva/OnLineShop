@@ -1,4 +1,5 @@
 ﻿using OnLineShop.Data.Models;
+using System.Data.Entity;
 using System.Linq;
 
 namespace OnLineShop.Data.Services
@@ -28,6 +29,13 @@ namespace OnLineShop.Data.Services
         public IQueryable<Category> GetAll()
         {
             return this.Context.Categories.Where(c => c.IsDeleted == false);
+        }
+
+        public IQueryable<Category> GetAllWithProducts()
+        {
+            return this.Context.Categories
+                 .Where(c => c.IsDeleted == false)
+                .Include(c => c.Products);
         }
 
         public Category GetById(int? id)

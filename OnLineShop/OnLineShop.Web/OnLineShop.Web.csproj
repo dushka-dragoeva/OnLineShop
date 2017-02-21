@@ -208,6 +208,8 @@
     <Content Include="Admin\ProducsAdminView.aspx" />
     <Content Include="Admin\ProductDetailsAdminView.aspx" />
     <Content Include="Admin\SizesAdminView.aspx" />
+    <Content Include="Categories.aspx" />
+    <Content Include="CategoryDetailsView.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -236,9 +238,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="ProductDetailsView.aspx" />
+    <Content Include="Products.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -273,7 +276,6 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="UserControl\AdminNavigation.ascx" />
-    <Content Include="UserControl\ClientNavigation.ascx" />
     <Content Include="UserControl\UploadImageControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -451,6 +453,20 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryDetailsView.aspx.cs">
+      <DependentUpon>CategoryDetailsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryDetailsView.aspx.designer.cs">
+      <DependentUpon>CategoryDetailsView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -477,6 +493,20 @@
     <Compile Include="NinjectBindingsModules\MvpNinjectModule.cs" />
     <Compile Include="PresenterFactories\ICustomPresenterFactory.cs" />
     <Compile Include="PresenterFactories\WebFormsMvpPresenterFactory.cs" />
+    <Compile Include="ProductDetailsView.aspx.cs">
+      <DependentUpon>ProductDetailsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetailsView.aspx.designer.cs">
+      <DependentUpon>ProductDetailsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -500,13 +530,6 @@
     <Compile Include="UserControl\AdminNavigation.ascx.designer.cs">
       <DependentUpon>AdminNavigation.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ClientNavigation.ascx.cs">
-      <DependentUpon>ClientNavigation.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControl\ClientNavigation.ascx.designer.cs">
-      <DependentUpon>ClientNavigation.ascx</DependentUpon>
-    </Compile>
     <Compile Include="UserControl\UploadImageControl.ascx.cs">
       <DependentUpon>UploadImageControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -520,13 +543,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

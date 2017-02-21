@@ -31,25 +31,25 @@ namespace OnLineShop.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MinLength(Constants.NameMinLength)]
-        [MaxLength(Constants.NameMaxLength)]
-        [RegularExpression(Constants.EnBgDigitSpaceMinus)]
+        [MinLength(Constants.NameMinLength, ErrorMessage = Constants.ShortNameError)]
+        [MaxLength(Constants.NameMaxLength, ErrorMessage = Constants.LongNameError)]
+        [RegularExpression(Constants.EnBgDigitSpaceMinus, ErrorMessage = Constants.NotAllowedSymbolsError)]
         public string Name { get; set; }
 
         [Column(TypeName = "ntext")]
-        [MinLength(Constants.DescriptionMinLength)]
-        [MaxLength(Constants.DescriptionMaxLength)]
-        [RegularExpression(Constants.DescriptionRegex)]
+        [MinLength(Constants.DescriptionMinLength, ErrorMessage = Constants.ShortDescriptionError)]
+        [MaxLength(Constants.DescriptionMaxLength, ErrorMessage = Constants.LongDescriptionError)]
+        [RegularExpression(Constants.DescriptionRegex, ErrorMessage = Constants.NotAllowedSymbolsError)]
         public string Description { get; set; }
 
         [Required]
-        [MinLength(Constants.NameMinLength)]
-        [MaxLength(Constants.NameMaxLength)]
-        [RegularExpression(Constants.DescriptionRegex)]
+        [MinLength(Constants.NameMinLength, ErrorMessage = Constants.ShortNameError)]
+        [MaxLength(Constants.NameMaxLength, ErrorMessage = Constants.LongNameError)]
+        [RegularExpression(Constants.DescriptionRegex, ErrorMessage = Constants.NotAllowedSymbolsError)]
         public string ModelNumber { get; set; }
 
         [Required]
-        [Range(int.MinValue, int.MaxValue)]
+        [Range(0, int.MaxValue, ErrorMessage = "Invalid Quantity; Range: 0, 2 147 483 647")]
         public int Quantity { get; set; }
 
         [ForeignKey("Category")]
@@ -64,17 +64,19 @@ namespace OnLineShop.Data.Models
 
         //  public virtual CartItem CartItem { get; set; }
 
-        [MinLength(UrlLengthMinLength)]
-        [MaxLength(UrlLengthMaxValue)]
+        [MinLength(UrlLengthMinLength, ErrorMessage = Constants.ShortUrlError)]
+        [MaxLength(UrlLengthMaxValue, ErrorMessage = Constants.LongUrlError)]
         public string PictureUrl { get; set; }
 
         [Required]
-        [Range(int.MinValue, int.MaxValue)]
+        [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "Invalid Price; Maximum Two Decimal Points")]
+        [Range(0, 9999999999999999.99, ErrorMessage = "Invalid Price; Range:0, 9999999999999999.99 ")]
         public decimal Price { get; set; }
 
         public bool IsInPromotion { get; set; }
 
-        [Range(int.MinValue, int.MaxValue)]
+        // [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "Invalid Promo Price; Maximum Two Decimal Points")]
+        //[Range(0, 9999999999999999.99, ErrorMessage = "Invalid Promo Price; Range:0, 9999999999999999.99 ")]
         public decimal PromoPrice { get; set; }
 
         public virtual ICollection<Photo> Photos

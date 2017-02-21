@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnLineShop.MVP.Products.Admin.ProductDetails
+namespace OnLineShop.MVP.Categories.Client
 {
-    public interface IProductDetailsAdminView
+    public class CategoryEventArgs : EventArgs
     {
 
     }

@@ -74,6 +74,7 @@ namespace OnLineShop.Web.Admin
             {
                 this.ps.Insert(product);
             }
+
         }
 
         public void FormViewAdminProductDetails_UpdateItem(int id)

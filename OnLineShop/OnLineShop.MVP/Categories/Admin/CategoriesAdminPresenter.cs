@@ -4,17 +4,21 @@ using WebFormsMvp;
 
 using OnLineShop.Data.Services;
 using OnLineShop.Data.Models;
+using Bytes2you.Validation;
 
-namespace OnLineShop.MVP.Categories
+namespace OnLineShop.MVP.Categories.Admin
 {
-    public class CategoriesPresenter : Presenter<ICategoriesView>
+    public class CategoriesAdminPresenter : Presenter<ICategoriesAdminView>
     {
         private readonly ICategoryService categoryService;
-        
-        public CategoriesPresenter(ICategoriesView view, ICategoryService categoryService)
+
+        public CategoriesAdminPresenter(ICategoriesAdminView view, ICategoryService categoryService)
             : base(view)
         {
+            Guard.WhenArgument(categoryService, "categoryService").IsNull().Throw();
+
             this.categoryService = categoryService;
+
             this.View.OnCategoriesGetData += this.View_OnCategoriesGetData;
             this.View.OnCategoryDelite += this.View_OnCategoriesDelete;
             this.View.OnCategoryEdit += this.View_OnCategoriesEdit;
@@ -31,7 +35,7 @@ namespace OnLineShop.MVP.Categories
             }
         }
 
-        private void View_OnCategoriesEdit(object sender, CategoryEventArgs e)
+        private void View_OnCategoriesEdit(object sender, CategoryAdminEventArgs e)
         {
             var category = new Category();
             category.Id = e.Id;
@@ -42,7 +46,7 @@ namespace OnLineShop.MVP.Categories
             }
         }
 
-        private void View_OnCategoriesDelete(object sender, CategoryEventArgs e)
+        private void View_OnCategoriesDelete(object sender, CategoryAdminEventArgs e)
         {
 
             this.categoryService.Delete(e.Id);

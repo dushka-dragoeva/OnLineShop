@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OnLineShop.Web.UserControl
+namespace OnLineShop.Web
 {
-    public partial class ClientNavigation : System.Web.UI.UserControl
+    public partial class CategoryDetailsView : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

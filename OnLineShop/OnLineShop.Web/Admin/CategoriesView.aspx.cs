@@ -6,15 +6,16 @@ using WebFormsMvp.Web;
 using OnLineShop.Data.Models;
 using OnLineShop.MVP.Categories;
 using WebFormsMvp;
+using OnLineShop.MVP.Categories.Admin;
 
 namespace OnLineShop.Web.Admin
 {
-    [PresenterBinding(typeof(CategoriesPresenter))]
-    public partial class CategoriesView : MvpPage<CategoriesViewModel>, ICategoriesView
+    [PresenterBinding(typeof(CategoriesAdminPresenter))]
+    public partial class CategoriesView : MvpPage<CategoriesAdminViewModel>, ICategoriesAdminView
     {
         public event EventHandler OnCategoriesGetData;
-        public event EventHandler<CategoryEventArgs> OnCategoryEdit;
-        public event EventHandler<CategoryEventArgs> OnCategoryDelite;
+        public event EventHandler<CategoryAdminEventArgs> OnCategoryEdit;
+        public event EventHandler<CategoryAdminEventArgs> OnCategoryDelite;
         public event EventHandler OnCategoryCreate;
 
         public IQueryable<Category> CategoryListView_GetData()
@@ -24,12 +25,12 @@ namespace OnLineShop.Web.Admin
         }
         public void CategoryListView_UpdateItem(int? id, string name)
         {
-            this.OnCategoryEdit?.Invoke(this, new CategoryEventArgs((int)id, name));
+            this.OnCategoryEdit?.Invoke(this, new CategoryAdminEventArgs((int)id, name));
         }
 
         public void CategoryListView_DeleteItem(int? id)
         {
-            this.OnCategoryDelite?.Invoke(this, new CategoryEventArgs((int)id, null));
+            this.OnCategoryDelite?.Invoke(this, new CategoryAdminEventArgs((int)id, null));
         }
 
         public void CategoryListView_InsertItem(object sender, EventArgs e)

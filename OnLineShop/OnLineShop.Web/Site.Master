@@ -51,7 +51,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Начало</a></li>
-                        <li><a runat="server" href="~/About">Продукти</a></li>
+                        <li><a runat="server" href="~/Products">Продукти</a></li>
                         <li><a runat="server" href="~/Contact">Доставка</a></li>
                         <li><a runat="server" href="~/Contact">Новини</a></li>
                         <li><a runat="server" href="~/Contact">Контакти</a></li>

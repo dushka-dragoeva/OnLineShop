@@ -2,6 +2,12 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:Image ID="Image1" runat="server" 
-        ImageUrl=""/>
+
+    <div>
+        <asp:Image ID="Image1" runat="server" CssClass=""
+            ImageUrl="~/Content/Images/Alefa.jpg" />
+    </div>
+
+    <a runat="server" href="/Categories">Категории</a>
+
 </asp:Content>
