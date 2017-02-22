@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using Moq;
+using NUnit.Framework;
 using OnLineShop.Data;
 using OnLineShop.Data.Models;
 using OnLineShop.Data.Services;
@@ -8,10 +8,10 @@ using System.Data.Entity;
 namespace OnLineShop.Services.Tests.BrandServiceTest
 {
 
-    [TestClass]
+    [TestFixture]
     public class GetById_Should
     {
-        [TestMethod]
+        [Test]
         public void ReturnNull_WhenIdParameterIsNull()
         {
             // Arrange
@@ -26,7 +26,7 @@ namespace OnLineShop.Services.Tests.BrandServiceTest
             Assert.IsNull(brandResult);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnCategory_WhenIdIsValid()
         {
             // Arrange

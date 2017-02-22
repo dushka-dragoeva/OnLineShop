@@ -37,9 +37,17 @@ namespace OnLineShop.MVP.Categories.Admin
 
         private void View_OnCategoriesEdit(object sender, CategoryAdminEventArgs e)
         {
-            var category = new Category();
-            category.Id = e.Id;
-            category.Name = e.Name;
+            Category category = this.categoryService.GetById(e.Id);
+
+            if (category == null)
+            {
+                this.View.ModelState.
+                    AddModelError("", String.Format("Item with id {0} was not found", e.Id));
+                return;
+            }
+
+            this.View.TryUpdateModel(category);
+
             if (this.View.ModelState.IsValid)
             {
                 this.categoryService.Update(category);

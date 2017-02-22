@@ -1,18 +1,18 @@
 ﻿using System.Data.Entity;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using Moq;
 
 using OnLineShop.Data;
 using OnLineShop.Data.Models;
 using OnLineShop.Data.Services;
-
+using NUnit.Framework;
 
 namespace OnLineShop.Services.Tests.SizeServiceTests
 {
-    [TestClass]
+    [TestFixture]
     public class GetById_Should
     {
-        [TestMethod]
+        [Test]
         public void ReturnNull_WhenIdParameterIsNull()
         {
             // Arrange
@@ -26,7 +26,7 @@ namespace OnLineShop.Services.Tests.SizeServiceTests
             Assert.IsNull(sizeResult);
         }
 
-        [TestMethod]
+        [Test]
         public void ReturnSize_WhenIdIsValid()
         {
             // Arrange
