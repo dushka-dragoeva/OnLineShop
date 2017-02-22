@@ -26,7 +26,7 @@ namespace OnLineShop.MVP.Categories.Client
 
         private void View_OnCategoriesGetData(object sender, EventArgs e)
         {
-            this.View.Model.Categories = this.categoryService.GetAllWithProducts().OrderBy(c=>c.Name);
+           this.View.Model.Categories = this.categoryService.GetAllWithProducts().OrderBy(c=>c.Name);
         }
     }
 }
