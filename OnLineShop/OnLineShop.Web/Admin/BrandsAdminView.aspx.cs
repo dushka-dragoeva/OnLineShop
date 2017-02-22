@@ -13,7 +13,7 @@ namespace OnLineShop.Web.Admin
     public partial class BrandsAdminView : MvpPage<BrandsAdminViewModel>, IBrandsAdminView
     {
         public event EventHandler OnBrandsGetData;
-        public event EventHandler<BrandEventArgs> OnBrandEdit;
+        public event EventHandler<BrandAdminEventArgs> OnBrandEdit;
         public event EventHandler<BrandIdEventArgs> OnBrandDelite;
         public event EventHandler OnBrandCreate;
 
@@ -25,7 +25,7 @@ namespace OnLineShop.Web.Admin
         public void BrandListView_UpdateItem(int? id, string name, string description ,string imageUrl)
         {
             var u = imageUrl;
-            this.OnBrandEdit?.Invoke(this, new MVP.Brands.Admin.BrandEventArgs((int)id, name, description,  imageUrl));
+            this.OnBrandEdit?.Invoke(this, new MVP.Brands.Admin.BrandAdminEventArgs((int)id, name, description,  imageUrl));
         }
 
         public void BrandListView_DeleteItem(int? id)

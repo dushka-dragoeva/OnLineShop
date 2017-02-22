@@ -2,9 +2,9 @@
 
 namespace OnLineShop.MVP.Brands.Admin
 {
-    public class BrandEventArgs : EventArgs, IBrandIdEventArgs
+    public class BrandAdminEventArgs : EventArgs, IBrandIdEventArgs
     {
-        public BrandEventArgs(int id, string name, string description, string url)
+        public BrandAdminEventArgs(int id, string name, string description, string url)
         {
             this.Id = id;
             this.Name = name;

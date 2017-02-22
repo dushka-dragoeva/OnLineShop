@@ -31,22 +31,19 @@ namespace OnLineShop.MVP.Brands.Admin
             }
         }
 
-        private void View_OnBrandEdit(object sender, BrandEventArgs e)
+        private void View_OnBrandEdit(object sender, BrandAdminEventArgs e)
         {
-            var brand = new Brand();
-            brand.Id = e.Id;
-            brand.Name = e.Name;
+            Brand brand = this.BrandService.GetById(e.Id);
 
-            if(!string.IsNullOrEmpty(e.Description))
+            if (brand == null)
             {
-                brand.Description = e.Description;
+                // The item wasn't found
+                this.View.ModelState.
+                    AddModelError("", String.Format("Item with id {0} was not found", e.Id));
+                return;
             }
 
-            if (!string.IsNullOrEmpty(e.Url))
-            {
-                brand.ImageUrl = e.Url;
-            }
-
+            this.View.TryUpdateModel(brand);
             if (this.View.ModelState.IsValid)
             {
                 this.BrandService.Update(brand);

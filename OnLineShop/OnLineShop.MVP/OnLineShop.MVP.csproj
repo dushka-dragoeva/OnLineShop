@@ -60,7 +60,7 @@
   <ItemGroup>
     <Compile Include="Brands\Admin\BrandsAdminPresenter.cs" />
     <Compile Include="Brands\Admin\BrandsAdminViewModel.cs" />
-    <Compile Include="Brands\Admin\BrandEventArgs.cs" />
+    <Compile Include="Brands\Admin\BrandAdminEventArgs.cs" />
     <Compile Include="Brands\Admin\IBrandsAdminView.cs" />
     <Compile Include="Brands\BrandIdEventArgs.cs" />
     <Compile Include="Brands\IBrandIdEventArgs.cs" />

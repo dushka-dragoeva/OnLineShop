@@ -95,6 +95,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Brands\BrandsAdminPresenterTests\View_OnBrandsEdit_Should.cs" />
     <Compile Include="Categories\AdminCategoriesPresenterTests\View_OnCategoriesEdit_Should.cs" />
     <Compile Include="Categories\ClientCategoriesPresenterTests\View_OnCategoriesGetData_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

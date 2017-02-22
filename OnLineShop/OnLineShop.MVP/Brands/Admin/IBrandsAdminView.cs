@@ -8,7 +8,7 @@ namespace OnLineShop.MVP.Brands.Admin
     {
         event EventHandler OnBrandsGetData;
 
-        event EventHandler<BrandEventArgs> OnBrandEdit;
+        event EventHandler<BrandAdminEventArgs> OnBrandEdit;
 
         event EventHandler<BrandIdEventArgs> OnBrandDelite;
 
