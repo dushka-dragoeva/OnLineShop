@@ -69,8 +69,8 @@ namespace OnLineShop.Data.Models
         public string PictureUrl { get; set; }
 
         [Required]
-        [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "Invalid Price; Maximum Two Decimal Points")]
-        [Range(0, 9999999999999999.99, ErrorMessage = "Invalid Price; Range:0, 9999999999999999.99 ")]
+      //  [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "Invalid Price; Maximum Two Decimal Points")]
+       // [Range(0, 9999999999999999.99, ErrorMessage = "Invalid Price; Range:0, 9999999999999999.99 ")]
         public decimal Price { get; set; }
 
         public bool IsInPromotion { get; set; }
