@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace OnLineShop.Data.Services
 {
-    public class BrandService: IBrandService
+    public class BrandService : IBrandService
     {
         private readonly IOnLineShopDbContext Context;
 
@@ -23,7 +23,7 @@ namespace OnLineShop.Data.Services
         {
             var entity = this.GetById(id);
             entity.IsDeleted = true;
-           return this.Context.SaveChanges();
+            return this.Context.SaveChanges();
         }
 
         public IQueryable<Brand> GetAll()
@@ -33,7 +33,7 @@ namespace OnLineShop.Data.Services
 
         public Brand GetById(int? id)
         {
-            return this.Context.Brands.Find(id);
+            return id.HasValue ? this.Context.Brands.Find(id) : null;
         }
 
         public Brand GetByName(string name)
@@ -47,7 +47,7 @@ namespace OnLineShop.Data.Services
             Brand BrandToUpdate = this.Context.Brands.Find(Brand.Id);
             this.Context.Entry(BrandToUpdate).CurrentValues.SetValues(Brand);
 
-          return  this.Context.SaveChanges();
+            return this.Context.SaveChanges();
         }
     }
 }

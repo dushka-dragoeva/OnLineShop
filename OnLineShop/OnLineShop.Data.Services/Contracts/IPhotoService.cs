@@ -9,7 +9,7 @@ namespace OnLineShop.Data.Services.Contracts
 {
     public interface IPhotoService
     {
-        Photo GetById(int id);
+        Photo GetById(int? id);
 
         int Update(Photo photo);
 

@@ -40,7 +40,7 @@ namespace OnLineShop.Data.Services
 
         public Category GetById(int? id)
         {
-            return this.Context.Categories.Find(id);
+            return id.HasValue ? this.Context.Categories.Find(id) : null;
         }
 
         public Category GetByName(string name)

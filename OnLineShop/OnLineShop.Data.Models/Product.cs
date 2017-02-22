@@ -75,8 +75,8 @@ namespace OnLineShop.Data.Models
 
         public bool IsInPromotion { get; set; }
 
-        // [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "Invalid Promo Price; Maximum Two Decimal Points")]
-        //[Range(0, 9999999999999999.99, ErrorMessage = "Invalid Promo Price; Range:0, 9999999999999999.99 ")]
+        [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "Invalid Promo Price; Maximum Two Decimal Points")]
+        [Range(0, 9999999999999999.99, ErrorMessage = "Invalid Promo Price; Range:0, 9999999999999999.99 ")]
         public decimal PromoPrice { get; set; }
 
         public virtual ICollection<Photo> Photos

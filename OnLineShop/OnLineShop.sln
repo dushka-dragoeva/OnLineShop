@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineShop.MVP", "OnLineSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineShop.Web", "OnLineShop.Web\OnLineShop.Web.csproj", "{390EDF02-F0D1-4C00-8417-CEEF7949A008}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{21F4832F-6848-44D8-BFBF-E4F32545D4E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineShop.Mvp.Tests", "OnLineShop.Mvp.Tests\OnLineShop.Mvp.Tests.csproj", "{C099E73D-20E6-4E93-BC82-D17F40633613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineShop.Services.Tests", "OnLineShop.Services.Tests\OnLineShop.Services.Tests.csproj", "{49F203FA-B504-4002-92D5-46B5636F306B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +45,20 @@ Global
 		{390EDF02-F0D1-4C00-8417-CEEF7949A008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{390EDF02-F0D1-4C00-8417-CEEF7949A008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{390EDF02-F0D1-4C00-8417-CEEF7949A008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C099E73D-20E6-4E93-BC82-D17F40633613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C099E73D-20E6-4E93-BC82-D17F40633613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C099E73D-20E6-4E93-BC82-D17F40633613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C099E73D-20E6-4E93-BC82-D17F40633613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F203FA-B504-4002-92D5-46B5636F306B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F203FA-B504-4002-92D5-46B5636F306B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F203FA-B504-4002-92D5-46B5636F306B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F203FA-B504-4002-92D5-46B5636F306B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C099E73D-20E6-4E93-BC82-D17F40633613} = {21F4832F-6848-44D8-BFBF-E4F32545D4E0}
+		{49F203FA-B504-4002-92D5-46B5636F306B} = {21F4832F-6848-44D8-BFBF-E4F32545D4E0}
 	EndGlobalSection
 EndGlobal

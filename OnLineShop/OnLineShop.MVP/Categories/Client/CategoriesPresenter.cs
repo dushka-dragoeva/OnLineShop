@@ -16,10 +16,10 @@ namespace OnLineShop.MVP.Categories.Client
         {
             this.categoryService = categoryService;
             this.View.OnCategoriesGetData += this.View_OnCategoriesGetData;
-            //this.View.OnCategoriesSelectedIndexChanged += this.View_OnCategoriesIndexChangedData;
+           // this.View.OnCategoriesSelectedIndexChanged += this.View_OnCategoriesIndexChangedData;
         }
 
-        //private void View_OnCategoriesIndexChangedData(object sender, CategoryAdminEventArgs e)
+        //private void View_OnCategoriesIndexChangedData(object sender, CategoryEventArgs e)
         //{
         //    this.View.Model.Category = this.categoryService.GetById(e.Id);
         //}
@@ -28,7 +28,5 @@ namespace OnLineShop.MVP.Categories.Client
         {
             this.View.Model.Categories = this.categoryService.GetAllWithProducts().OrderBy(c=>c.Name);
         }
-
-       
     }
 }

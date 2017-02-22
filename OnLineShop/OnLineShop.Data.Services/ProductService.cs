@@ -17,7 +17,7 @@ namespace OnLineShop.Data.Services
 
         public IQueryable<Product> GetAllWithCategoryBrand()
         {
-            var pr= Context.Products
+            var pr = Context.Products
                 .Where(p => p.IsDeleted == false)
                  .Include(p => p.Brand)
                  .Include(p => p.Category);
@@ -39,7 +39,7 @@ namespace OnLineShop.Data.Services
 
         public Product GetById(int? id)
         {
-            return this.Context.Products.Find(id);
+            return id.HasValue ? this.Context.Products.Find(id) : null;
         }
 
         public int Insert(Product product)

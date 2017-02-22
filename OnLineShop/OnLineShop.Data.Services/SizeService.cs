@@ -34,7 +34,7 @@ namespace OnLineShop.Data.Services
 
         public Size GetById(int? id)
         {
-            return this.Context.Sizes.Find(id);
+            return id.HasValue ? Context.Sizes.Find(id) : null;
         }
 
         public int Update(Size Size)

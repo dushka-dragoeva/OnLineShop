@@ -13,9 +13,9 @@ namespace OnLineShop.Data.Services
             this.Context = context;
         }
 
-        public Photo GetById(int id)
+        public Photo GetById(int? id)
         {
-            return this.Context.Photos.Find(id);
+            return id.HasValue? this.Context.Photos.Find(id): null;
         }
 
         public int Insert(Photo photo)
